@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    < <link rel="stylesheet" href="style.css">
+    <scrpit src="scrpit.js"></scrpit> -->
+</head>
+
+<body>
+    <!-- <div class="container">
+        
+        <p>Instructions for life:</p>
+        <ul>
+            <li>Eat</li>
+            <li>Sleep</li>
+            <li>Repeat</li>
+        </ul>
+    </div> -->
+    <h1>Train Ticket Booking</h1>
+    <button onclick="bookTicket()">Book Now</button>
+    <p id="status">Waiting for your action...</p>
+
+    <script>
+        function bookTicket() {
+            const status = document.getElementById("status");
+            status.textContent = "Booking your ticket... please wait ⏳";
+
+            // Simulating a server process with a Promise
+            let booking = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    let success = true; // Change to false to simulate failure
+                    if (success) {
+                        resolve("✅ Ticket booked successfully!");
+                    } else {
+                        reject("❌ Booking failed. Please try again.");
+                    }
+                }, 2000); // 2-second delay
+            });
+
+            booking
+                .then((message) => {
+                    status.textContent = message;
+                })
+                .catch((error) => {
+                    status.textContent = error;
+                });
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+
+Advanced javascript practice
